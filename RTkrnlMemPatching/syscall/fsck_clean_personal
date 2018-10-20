@@ -1,0 +1,36 @@
+** /dev/ada0s1a (NO WRITE)
+
+USE JOURNAL? no
+
+** Skipping journal, falling through to full fsck
+
+SETTING DIRTY FLAG IN READ_ONLY MODE
+
+UNEXPECTED SOFT UPDATE INCONSISTENCY
+** Last Mounted on /
+** Root file system
+** Phase 1 - Check Blocks and Sizes
+INCORRECT BLOCK COUNT I=2419849 (32 should be 0)
+CORRECT? no
+
+** Phase 2 - Check Pathnames
+** Phase 3 - Check Connectivity
+** Phase 4 - Check Reference Counts
+UNREF FILE  I=2419851  OWNER=root MODE=100600
+SIZE=0 MTIME=Oct  3 01:39 2018 
+RECONNECT? no
+
+
+CLEAR? no
+
+** Phase 5 - Check Cyl groups
+FREE BLK COUNT(S) WRONG IN SUPERBLK
+SALVAGE? no
+
+SUMMARY INFORMATION BAD
+SALVAGE? no
+
+BLK(S) MISSING IN BIT MAPS
+SALVAGE? no
+
+390007 files, 1449801 used, 3369877 free (1149 frags, 421091 blocks, 0.0% fragmentation)

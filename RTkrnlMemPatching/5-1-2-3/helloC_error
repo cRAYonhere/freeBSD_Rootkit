@@ -1,0 +1,52 @@
+In file included from hello.c:7:0:
+/usr/include/sys/systm.h:305:30: error: unknown type name 'uintfptr_t'
+ void hardclock(int usermode, uintfptr_t pc);
+                              ^~~~~~~~~~
+/usr/include/sys/systm.h:312:30: error: unknown type name 'uintfptr_t'
+ void profclock(int usermode, uintfptr_t pc);
+                              ^~~~~~~~~~
+/usr/include/sys/systm.h:313:43: error: unknown type name 'uintfptr_t'
+ void profclock_cnt(int cnt, int usermode, uintfptr_t pc);
+                                           ^~~~~~~~~~
+In file included from /usr/include/sys/systm.h:357:0,
+                 from hello.c:7:
+/usr/include/sys/libkern.h:56:15: error: unknown type name 'bool'
+ static inline bool
+               ^~~~
+In file included from hello.c:7:0:
+/usr/include/sys/systm.h:380:17: error: unknown type name 'intrmask_t'
+ static __inline intrmask_t splbio(void)  { return 0; }
+                 ^~~~~~~~~~
+/usr/include/sys/systm.h:381:17: error: unknown type name 'intrmask_t'
+ static __inline intrmask_t splcam(void)  { return 0; }
+                 ^~~~~~~~~~
+/usr/include/sys/systm.h:382:17: error: unknown type name 'intrmask_t'
+ static __inline intrmask_t splclock(void)  { return 0; }
+                 ^~~~~~~~~~
+/usr/include/sys/systm.h:383:17: error: unknown type name 'intrmask_t'
+ static __inline intrmask_t splhigh(void)  { return 0; }
+                 ^~~~~~~~~~
+/usr/include/sys/systm.h:384:17: error: unknown type name 'intrmask_t'
+ static __inline intrmask_t splimp(void)  { return 0; }
+                 ^~~~~~~~~~
+/usr/include/sys/systm.h:385:17: error: unknown type name 'intrmask_t'
+ static __inline intrmask_t splnet(void)  { return 0; }
+                 ^~~~~~~~~~
+/usr/include/sys/systm.h:386:17: error: unknown type name 'intrmask_t'
+ static __inline intrmask_t spltty(void)  { return 0; }
+                 ^~~~~~~~~~
+/usr/include/sys/systm.h:387:28: error: unknown type name 'intrmask_t'
+ static __inline void  splx(intrmask_t ipl __unused) { return; }
+                            ^~~~~~~~~~
+hello.c:27:21: error: 'NO_SYSCALL' undeclared here (not in a function)
+ static int offset = NO_SYSCALL;
+                     ^~~~~~~~~~
+hello.c: In function 'load':
+hello.c:42:12: error: 'EOPNOTSUPP' undeclared (first use in this function)
+    error = EOPNOTSUPP;
+            ^~~~~~~~~~
+hello.c:42:12: note: each undeclared identifier is reported only once for each function it appears in
+hello.c: At top level:
+hello.c:49:23: error: expected ')' before '&' token
+ SYSCALL_MODULE(hello, &offset, &hello_sysent, load, NULL);
+                       ^
