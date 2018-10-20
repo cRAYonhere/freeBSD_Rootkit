@@ -1,0 +1,7 @@
+Warning: Object directory not changed from original /root/rootkit/DKOM/3-2
+cc -O2 -pipe  -fno-strict-aliasing -Werror -D_KERNEL -DKLD_MODULE -nostdinc   -I. -I/usr/src/sys -fno-common    -MD  -MF.depend.process_hiding_redux.o -MTprocess_hiding_redux.o -mno-mmx -mno-sse -msoft-float -ffreestanding -fwrapv -fstack-protector -Wall -Wredundant-decls -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wpointer-arith -Winline -Wcast-qual -Wundef -Wno-pointer-sign -D__printf__=__freebsd_kprintf__ -Wmissing-include-dirs -fdiagnostics-show-option -Wno-unknown-pragmas -Wno-error-tautological-compare -Wno-error-empty-body -Wno-error-parentheses-equality -Wno-error-unused-function -Wno-error-pointer-sign -Wno-error-shift-negative-value -Wno-error-address-of-packed-member  -mno-aes -mno-avx  -std=iso9899:1999 -c process_hiding_redux.c -o process_hiding_redux.o
+ld -d -warn-common -r -d -o process_hiding_redux.kld process_hiding_redux.o
+:> export_syms
+awk -f /usr/src/sys/conf/kmod_syms.awk process_hiding_redux.kld  export_syms | xargs -J% objcopy % process_hiding_redux.kld
+ld -Bshareable -d -warn-common -o process_hiding_redux.ko process_hiding_redux.kld
+objcopy --strip-debug process_hiding_redux.ko

@@ -1,0 +1,16 @@
+Warning: Object directory not changed from original /root/rootkit/hooking/2-3
+cc -O2 -pipe  -fno-strict-aliasing -Werror -D_KERNEL -DKLD_MODULE -nostdinc   -I. -I/usr/src/sys -fno-common    -MD  -MF.depend.icmp_input_hook.o -MTicmp_input_hook.o -mno-mmx -mno-sse -msoft-float -ffreestanding -fwrapv -fstack-protector -Wall -Wredundant-decls -Wnested-externs -Wstrict-prototypes -Wmissing-prototypes -Wpointer-arith -Winline -Wcast-qual -Wundef -Wno-pointer-sign -D__printf__=__freebsd_kprintf__ -Wmissing-include-dirs -fdiagnostics-show-option -Wno-unknown-pragmas -Wno-error-tautological-compare -Wno-error-empty-body -Wno-error-parentheses-equality -Wno-error-unused-function -Wno-error-pointer-sign -Wno-error-shift-negative-value -Wno-error-address-of-packed-member  -mno-aes -mno-avx  -std=iso9899:1999 -c icmp_input_hook.c -o icmp_input_hook.o
+icmp_input_hook.c:23:1: error: redefinition of 'icmp_input_hook' as different kind of symbol
+icmp_input_hook(struct mbuf *m, int off){
+^
+icmp_input_hook.c:18:5: note: previous definition is here
+int icmp_input_hook;
+    ^
+icmp_input_hook.c:60:44: error: incompatible integer to pointer conversion assigning to 'pr_input_t *' (aka 'int (*)(struct mbuf **, int *, int)') from 'int' [-Werror,-Wint-conversion]
+                inetsw[ip_protox[IPPROTO_ICMP]].pr_input = icmp_input_hook;
+                                                         ^ ~~~~~~~~~~~~~~~
+2 errors generated.
+*** Error code 1
+
+Stop.
+make: stopped in /root/rootkit/hooking/2-3

@@ -1,0 +1,44 @@
+ PID TT  STAT      TIME COMMAND
+   0  -  DLs    0:00.03 [kernel]
+   1  -  ILs    0:00.00 /sbin/init --
+   2  -  DL     0:00.00 [crypto]
+   3  -  DL     0:00.00 [crypto returns]
+   4  -  DL     0:00.41 [cam]
+   5  -  DL     0:00.00 [sctp_iterator]
+   6  -  DL     0:03.66 [rand_harvestq]
+   7  -  DL     0:00.00 [soaiod1]
+   8  -  DL     0:00.00 [soaiod2]
+   9  -  DL     0:00.00 [soaiod3]
+  10  -  DL     0:00.00 [audit]
+  11  -  RNL  243:53.69 [idle]
+  12  -  WL     0:47.96 [intr]
+  13  -  DL     0:00.01 [geom]
+  14  -  DL     0:01.51 [usb]
+  15  -  DL     0:00.00 [soaiod4]
+  16  -  DL     0:00.22 [pagedaemon]
+  17  -  DL     0:00.00 [vmdaemon]
+  18  -  DNL    0:00.00 [pagezero]
+  19  -  DL     0:00.29 [bufdaemon]
+  20  -  DL     0:00.05 [bufspacedaemon]
+  21  -  DL     0:00.71 [syncer]
+  22  -  DL     0:00.07 [vnlru]
+ 286  -  Is     0:00.02 dhclient: le0 [priv] (dhclient)
+ 348  -  ICs    0:00.01 dhclient: le0 (dhclient)
+ 351  -  Is     0:00.01 /sbin/devd
+ 394  -  Is     0:00.06 /usr/sbin/unbound -c /var/unbound/unbound.conf
+ 427  -  Ss     0:00.03 /usr/sbin/syslogd -s
+ 629  -  Is     0:00.00 /usr/sbin/sshd
+ 632  -  Ss     0:00.23 sendmail: accepting connections (sendmail)
+ 635  -  Is     0:00.01 sendmail: Queue runner@00:30:00 for /var/spool/clientmq
+ 639  -  Is     0:00.05 /usr/sbin/cron -s
+ 656  -  Is     0:00.14 /usr/sbin/moused -p /dev/psm0 -t auto
+ 700 v0  Is     0:00.02 login [pam] (login)
+ 708 v0  S      0:00.41 -csh (csh)
+1779 v0  R+     0:00.00 ps afx
+ 701 v1  Is+    0:00.00 /usr/libexec/getty Pc ttyv1
+ 702 v2  Is+    0:00.00 /usr/libexec/getty Pc ttyv2
+ 703 v3  Is+    0:00.00 /usr/libexec/getty Pc ttyv3
+ 704 v4  Is+    0:00.00 /usr/libexec/getty Pc ttyv4
+ 705 v5  Is+    0:00.00 /usr/libexec/getty Pc ttyv5
+ 706 v6  Is+    0:00.00 /usr/libexec/getty Pc ttyv6
+ 707 v7  Is+    0:00.00 /usr/libexec/getty Pc ttyv7
