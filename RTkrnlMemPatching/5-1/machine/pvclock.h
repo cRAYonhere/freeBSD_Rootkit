@@ -1,6 +1,0 @@
-/*-
- * This file is in the public domain.
- */
-/* $FreeBSD: releng/11.2/sys/i386/include/pvclock.h 278183 2015-02-04 08:26:43Z bryanv $ */
-
-#include <x86/pvclock.h>
