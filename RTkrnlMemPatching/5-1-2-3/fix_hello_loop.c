@@ -6,7 +6,7 @@
 #include <sys/types.h>
 #include <stdlib.h>
 
-#define SIZE 0x58
+#define SIZE 0x64
 
 /* Replacement code. */
 unsigned char nop_code[] ="\x90\x90\x90\x90\x90"; /* nop */
@@ -45,23 +45,19 @@ int main(int argc, char *argv[]){
 
   /* Search through hello for the jns instruction. */
   for (i = 0; i < SIZE; i++){
-    //printf("%x\n",hello_code[i]);
-    if (hello_code[i] == 0xe9 && hello_code[i+1] == 0xd7) {
-      //printf("-->>%x\n",hello_code[i]);
+    if (hello_code[i] == 0xe8) {
       offset = i;
-      break;
+     /* Patch hello. */
+     if (kvm_write(kd, nl[0].n_value + offset, nop_code, sizeof(nop_code) - 1) < 0){
+       fprintf(stderr, "ERROR: %s\n", kvm_geterr(kd));
+       exit(-1);
+     }else{
+       fprintf(stdout, "Overwrite Success.\n");
+     }
     }
   }
- // Patch loop
- if (kvm_write(kd, nl[0].n_value + offset, nop_code, sizeof(nop_code) - 1) < 0){
-      fprintf(stderr, "ERROR: %s\n", kvm_geterr(kd));
-      exit(-1);
- }else{
-      fprintf(stdout, "Overwrite Success.\n");
-     }
-  
 
-  // Close kd. 
+  /* Close kd. */
   if (kvm_close(kd) < 0) {
     fprintf(stderr, "ERROR: %s\n", kvm_geterr(kd));
     exit(-1);
